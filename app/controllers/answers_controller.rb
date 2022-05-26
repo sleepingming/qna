@@ -1,6 +1,4 @@
 class AnswersController < ApplicationController
-  expose :answers, ->{ Answers.all }
-  expose :answer
 
   def create
     @question = Question.find(params[:question_id])
