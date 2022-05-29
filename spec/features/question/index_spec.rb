@@ -7,11 +7,12 @@ feature 'Uset can see all questions', %q{
 } do
 
   given(:user) { create(:user) }
+  let!(:question) { create(:question) }
 
   describe 'Any user' do
     scenario 'sees all questions' do
       visit questions_path
-      expect(page).to have_content 'Questions'
+      expect(page).to have_content question.title
     end
   end
 
