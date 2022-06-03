@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-feature 'Uset can see all questions', %q{
+feature 'User can see all questions', %q{
   In order to find a needed question
   As an any user
   I'd like to see all questions
 } do
 
-  given(:user) { create(:user) }
   let!(:question) { create(:question) }
 
   describe 'Any user' do

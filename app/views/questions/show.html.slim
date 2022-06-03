@@ -1,2 +1,17 @@
-h1= @question.title
-p= @question.body
+div
+  h1= @question.title
+  p= @question.body
+
+div
+  h2 Answers:
+
+div
+  =render @question.answers
+
+div
+  Enter your answer
+  =render 'shared/errors', resource: @answer
+  =form_with model: [@question, @answer], local: true do |f|
+    p= f.label :body
+    p= f.text_area :body
+    p= f.submit 'Send Answer'
