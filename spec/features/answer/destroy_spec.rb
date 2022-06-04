@@ -1,16 +1,14 @@
 require 'rails_helper'
 
-feature 'User can destroy answer', %q{
+feature 'User can destroy answer', "
   In order to delete wrong answer
   As an author
   I'd like to be able to delete a answer
-} do
-
+" do
   given(:answer) { create(:answer) }
   given(:user) { create(:user) }
 
   describe 'Authenticated user' do
-
     scenario 'user is author' do
       sign_in(answer.user)
       visit question_path(answer.question)

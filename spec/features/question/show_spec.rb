@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-feature 'User can see question and answers', %q{
+feature 'User can see question and answers', "
   In order to find solution
   As an any user
   I'd like to see all answers
-} do
-
+" do
   given(:answer) { create(:answer) }
 
   scenario 'sees the question and answers' do

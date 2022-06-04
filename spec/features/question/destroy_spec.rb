@@ -1,17 +1,14 @@
 require 'rails_helper'
 
-feature 'User can destroy question', %q{
+feature 'User can destroy question', "
   In order to stop discuss
   As an author
   I'd like to be able to delete a question
-} do
-
+" do
   given(:question) { create(:question) }
   given(:user) { create(:user) }
 
   describe 'Authenticated user' do
-
-
     scenario 'user is author' do
       sign_in(question.user)
       visit question_path(question)

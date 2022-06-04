@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-feature 'User can create answer', %q{
+feature 'User can create answer', "
   In order to help to community
   As an any user
   I'd like to be able to answer the question
-} do
-
+" do
   given(:user) { create(:user) }
   given(:question) { create(:question) }
 
@@ -30,7 +29,7 @@ feature 'User can create answer', %q{
 
   scenario 'Unauthenticated user tries to send answer' do
     visit question_path(question)
-    fill_in 'Body', with: "text"
+    fill_in 'Body', with: 'text'
     click_on 'Send Answer'
 
     expect(page).to have_content 'You need to sign in or sign up before continuing.'
