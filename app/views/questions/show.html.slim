@@ -1,0 +1,23 @@
+div
+  -if current_user&.author_of?(@question)
+    = link_to "Delete question",
+      question_path(@question),
+      method: "delete"
+
+div
+  h1= @question.title
+  p= @question.body
+
+div
+  h2 Answers:
+
+div
+  = render @question.answers
+
+div
+  h2 Enter your answer:
+  = render 'shared/errors', resource: @answer
+  = form_with model: [@question, @answer], local: true do |f|
+    = f.label :body
+    = f.text_area :body
+    = f.submit 'Send Answer'
